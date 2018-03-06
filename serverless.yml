@@ -89,7 +89,7 @@ functions:
 
 #    Define function environment variables here
     environment:
-      WEBHOOK_URL: "db5d8b00.ngrok.io"
+      WEBHOOK_URL: $NGROK_URL
 
 # you can add CloudFormation resource templates here
 #resources:
