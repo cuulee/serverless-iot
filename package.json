@@ -1,0 +1,12 @@
+{
+  "name": "my-serverless",
+  "version": "1.0.0",
+  "description": "Webhook listener",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "logs": "serverless logs -f hello -t"
+  },
+  "author": "Jainish Shah",
+  "license": "None"
+}

@@ -2,11 +2,11 @@
 
 var https = require('https');
 
-module.exports.hello = (event, context, callback) => {
+module.exports.hello = function(event, context, callback) {
 
     var errMsg;
     var url = process.env.WEBHOOK_URL;
-    var version = event.body.version;
+    var version = JSON.parse(event.body).version;
     if (typeof url !== "string") {
         errMsg = "[401] must provide a 'WEBHOOK_URL' env variable";
         return callback(new Error(errMsg));
@@ -40,12 +40,11 @@ module.exports.hello = (event, context, callback) => {
     });
     post_req.end();
 
-  const response = {
+    var response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'Upgrade to version: '+ version +' Triggered ',
-      input: event,
-    }),
+      input: event
+    })
   };
 
   callback(null, response);
