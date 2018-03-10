@@ -2,7 +2,7 @@
 
 var https = require('https');
 
-module.exports.hello = function(event, context, callback) {
+module.exports.webhook = function(event, context, callback) {
 
     var errMsg;
     var url = process.env.WEBHOOK_URL;
@@ -23,7 +23,7 @@ module.exports.hello = function(event, context, callback) {
         path: '/upgrade?version=' + version,
         // authentication headers
         headers: {
-            'Authorization': 'Basic ' + new Buffer('jfrog:WonderWomen').toString('base64')
+            'Authorization': 'Basic ' + new Buffer('process.env.USERNAME:process.env.PASSWORD').toString('base64')
         },
         method: 'POST'
     };
