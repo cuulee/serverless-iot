@@ -7,6 +7,9 @@
     "deploy": "serverless deploy",
     "logs": "serverless logs -f hello -t"
   },
+  "dependencies": {
+    "https": "^1.0.0"
+  },
   "author": "Jainish Shah",
   "license": "None"
 }
